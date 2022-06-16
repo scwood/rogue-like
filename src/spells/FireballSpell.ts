@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import { Fireball } from "./Fireball";
-import { Wizard } from "./Wizard";
+import { Wizard } from "../characters/Wizard";
 
 export class FireballSpell {
   private _scene: Phaser.Scene;
@@ -19,8 +19,7 @@ export class FireballSpell {
         this._wizard.x,
         this._wizard.y
       );
-      this._scene.physics.add.existing(fireball);
-    }, 3000);
+    }, 2000);
   }
 
   stop() {

@@ -1,19 +1,23 @@
 import Phaser from "phaser";
 
-import { MainScene } from "./MainScene";
+import { Preloader } from "./scenes/Preloader";
+import { Game } from "./scenes/Game";
 
 const game = new Phaser.Game({
   type: Phaser.AUTO,
   width: 640,
   height: 360,
+  zoom: 2,
   scale: {
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  zoom: 2,
   pixelArt: true,
   roundPixels: false,
-  scene: [MainScene],
+  scene: [Preloader, Game],
   physics: {
     default: "arcade",
+    arcade: {
+      debug: false,
+    },
   },
 });
